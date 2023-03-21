@@ -41,8 +41,8 @@ public class Task03 {
             System.out.println("----------------------------------");
 
             inputResult = scan.hasNextInt();
-            inputDigit = scan.nextInt();
             if(inputResult) {
+                inputDigit = scan.nextInt();
                 if((inputDigit < 1) 
                 || (inputDigit > list.length)) {
                     System.out.printf("Неверный ввод, введите число от %d до %d \n", 1, list.length);
@@ -61,13 +61,13 @@ public class Task03 {
         boolean flag = false;
         Scanner scan = new Scanner(System.in);
 
-
         do {
             System.out.printf("Введите число №%d: ", digNum);
             flag = scan.hasNextInt();
 
-            if(scan.hasNextInt()) {
+            if(flag) {
                 dig = scan.nextInt();
+                scan.nextLine();
                 return dig;
             }else{
                 System.out.printf("Неверный ввод!!! \n");
