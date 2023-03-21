@@ -76,20 +76,6 @@ public class Task03 {
 
         } while (!flag);
 
-        // while(!flag){
-
-        //     System.out.printf("Введите число №%d: ", digNum);
-        //     flag = scan.hasNextInt();
-
-        //     if(scan.hasNextInt()) {
-        //         dig = scan.nextInt();
-        //         return dig;
-        //     }else{
-        //         System.out.printf("Неверный ввод!!! \n");
-        //     }
-        //     scan.close();
-        // }
-
         return dig;
     }
 
