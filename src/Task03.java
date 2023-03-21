@@ -1,10 +1,7 @@
-import java.util.Scanner;
-
-// import org.w3c.dom.stylesheets.MediaList;
-
 /*
  * Реализовать простой калькулятор
  */
+import java.util.Scanner;
 
 public class Task03 {
 
