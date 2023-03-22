@@ -42,6 +42,8 @@ public class Task02_01 {
         String[] jParamArr  = JSONObject.getNames(jsonObject);
         StringBuilder stringRequestBuild = new StringBuilder();
 
+        PrintParseJson(jsonObject);
+
         stringRequestBuild.append(sqlReqStr);
 
         for(int key = 0; key < jParamArr.length; key++){
