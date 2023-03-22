@@ -12,21 +12,19 @@
 
 // Import JSON Lib from https://github.com/stleary/JSON-java
 // Locate in this project: .\lib\json-20230227.jar
-import java.text.Format;
-
 import org.json.JSONObject;
 
 public class Task02_01 {
     // Исходные данные
     static String sqlRequest = "select * from students where ";
     static String jsonFilter = "{\"name\":\"Ivanov\", \"country\":\"Russia\", \"city\":\"Moscow\", \"age\":\"null\"}";
+    // static String jsonFilter = "{\"name\":\"null\", \"country\":\"Russia\", \"city\":\"Moscow\", \"age\":\"null\", \"freak\":\"No\", \"sex\":\"man\"}";
 
     public static void main(String[] args) {
         System.out.println("========== Задача №02-01 =============");
-        System.out.printf("Json: %s\n", jsonFilter);
-
-        getSQLRequestJsonFilter(sqlRequest, jsonFilter);
-
+        System.out.printf("JsonFilter: %s\n", jsonFilter);
+        System.out.printf("SQLRequest: %s\n",getSQLRequestJsonFilter(sqlRequest, jsonFilter));
+        System.out.println("======================================");
     }
 
     private static void PrintParseJson(JSONObject jObj) {
@@ -40,27 +38,29 @@ public class Task02_01 {
 
     private static String getSQLRequestJsonFilter(String sqlReqStr, String jsonFilterStr) {
         String requestResultStr = null;
-
-        StringBuilder stringRequestBuild = new StringBuilder();
         JSONObject jsonObject = new JSONObject(jsonFilterStr);
-
-        String[] jParamArr  = new String[jsonObject.length()]; 
-        jParamArr = JSONObject.getNames(jsonObject);
+        String[] jParamArr  = JSONObject.getNames(jsonObject);
+        StringBuilder stringRequestBuild = new StringBuilder();
 
         stringRequestBuild.append(sqlReqStr);
 
-        for(int idx = 0; idx < jParamArr.length; idx++){
-            System.out.println(jParamArr[idx]);
-            stringRequestBuild.append(String.format("%s=%s and", jParamArr[idx], jsonObject.getString(jParamArr[idx])));
+        for(int key = 0; key < jParamArr.length; key++){
+
+            if(jsonObject.getString(jParamArr[key]).contains("null"))
+                continue;
+            else {
+                stringRequestBuild.append (
+                String.format("%s=%s", 
+                    jParamArr[key], 
+                    jsonObject.getString(jParamArr[key]))
+                );
+
+                if((key < jParamArr.length - 1) && !jsonObject.getString(jParamArr[key + 1]).contains("null"))
+                    stringRequestBuild.append(" and ");        
+            }           
         }
 
         requestResultStr = stringRequestBuild.toString();
-        System.out.println(requestResultStr);
-
-        // PrintParseJson(jsonObject);
-
-
-
 
         return requestResultStr;
     }
