@@ -36,9 +36,7 @@ public class Task02_02 {
     }
 
     static private void writeLog(int first, int second, int arr[]) {
-        String logStr = String.format("Меняем местами \"%d\" и \"%d\": [ %s]\n", first, second, getArrString(arr));
-        logger.info(logStr);
-        // System.out.println(logStr);
+        logger.info(String.format("Меняем местами \"%d\" и \"%d\": [ %s]\n", first, second, getArrString(arr)));
     }
 
     static private void bubbleSorter(int arr[]) {     
