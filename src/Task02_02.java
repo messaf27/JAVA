@@ -35,8 +35,8 @@ public class Task02_02 {
         return arrStrBuilder.toString();
     }
 
-    static private void writeLog(int first, int second) {
-        String logStr = String.format("Меняем местами \"%d\" и \"%d\"", first, second);
+    static private void writeLog(int first, int second, int arr[]) {
+        String logStr = String.format("Меняем местами \"%d\" и \"%d\": [ %s]\n", first, second, getArrString(arr));
         logger.info(logStr);
         // System.out.println(logStr);
     }
@@ -45,7 +45,7 @@ public class Task02_02 {
         for (int i = arr.length - 1; i >= 1; i--) {  
             for (int j = 0; j < i; j++) {       
                 if(arr[j] > arr[j + 1]) {
-                    writeLog(arr[j], arr[j + 1]);
+                    writeLog(arr[j], arr[j + 1], arr);
                     int temp = arr[j];      
                     arr[j] = arr[j + 1];       
                     arr[j + 1] = temp;          
