@@ -3,7 +3,7 @@
  */
 import java.util.Scanner;
 
-public class Task03 {
+public class Task01_03 {
 
     public static String[] MenuList  = new String[] {
         "Сумма", 
