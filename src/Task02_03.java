@@ -95,7 +95,7 @@ public class Task02_03 {
 
             studentCount++;
 
-            System.out.printf("[%d] %s\n", studentCount, outStr.toString());
+            System.out.printf("[%d]%s\n", studentCount, outStr.toString());
         }
     }
 }
