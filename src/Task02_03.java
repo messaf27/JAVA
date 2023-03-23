@@ -26,32 +26,32 @@ import java.io.InputStreamReader;
 public class Task02_03 {
     public static void main(String[] args) throws IOException {
 
-        File dbJson = new File(".\\src\\db.json");
-        // PrintFile(dbJson);
-        parseJsonFile(dbJson);
+        File dbJsonFile = new File(".\\src\\db.json");
+
+        System.out.println("==================== Задача №02-03 =====================");
+        System.out.printf("File Path: %s\n", dbJsonFile.toPath());
+        parseJsonFile(dbJsonFile);
+        System.out.println("========================================================");
     }
 
-    /**
-     * @param file
-     */
-    private static void PrintFile(File file) {
-        StringBuilder fileLines = new StringBuilder();
-        try {
-            String str;
-            BufferedReader fileBuff = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF8"));
+    // private static void PrintFile(File file) {
+    //     StringBuilder fileLines = new StringBuilder();
+    //     try {
+    //         String str;
+    //         BufferedReader fileBuff = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF8"));
 
-            while ((str = fileBuff.readLine()) != null) {
-                // System.out.println(str);
-                // fileLines.append(str);
-                fileLines.append(str+"\n");
-            }
-            fileBuff.close();
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
+    //         while ((str = fileBuff.readLine()) != null) {
+    //             // System.out.println(str);
+    //             // fileLines.append(str);
+    //             fileLines.append(str+"\n");
+    //         }
+    //         fileBuff.close();
+    //     } catch (Exception e) {
+    //         System.out.println(e.getMessage());
+    //     }
 
-        System.out.println(fileLines.toString());
-    }
+    //     System.out.println(fileLines.toString());
+    // }
 
     private static String getStrFromJsonFile(File jsonFile) {
         StringBuilder fileLines = new StringBuilder();
@@ -73,13 +73,29 @@ public class Task02_03 {
     }
 
     private static void parseJsonFile(File jsonFile) {
-        JSONObject jsonObject = new JSONObject(getStrFromJsonFile(jsonFile));
-        String[] jArr = JSONObject.getNames(jsonObject);
+        JSONArray jsArrObj = new JSONArray(getStrFromJsonFile(jsonFile));
 
-        for (String name : jArr) {
-            System.out.println(name);
+        System.out.println("--------------------------------------------------------");
+        System.out.printf("Всего студентов найдено: %d\n", jsArrObj.length());
+        System.out.println("--------------------------------------------------------");
+
+
+        int studentCount = 0;
+        for (Object jsonObjString : jsArrObj) {
+
+            JSONObject jsonObject = new JSONObject(jsonObjString.toString());
+            StringBuilder outStr = new StringBuilder();
+
+            outStr.append(" Студент ");
+            outStr.append(jsonObject.getString("фамилия"));
+            outStr.append(" получил ");
+            outStr.append(jsonObject.getString("оценка"));
+            outStr.append(" по предмету ");
+            outStr.append(jsonObject.getString("предмет"));
+
+            studentCount++;
+
+            System.out.printf("[%d] %s\n", studentCount, outStr.toString());
         }
-
-        // System.out.println(jArr.toString());
     }
 }
