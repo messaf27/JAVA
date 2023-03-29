@@ -40,12 +40,15 @@ public class Task03_01 {
             result[destIndex++] = sorted1[index1] < sorted2[index2]
                     ? sorted1[index1++] : sorted2[index2++];
         }
+
         while (index1 < middle) {
             result[destIndex++] = sorted1[index1++];
         }
+
         while (index2 < endIndex) {
             result[destIndex++] = sorted2[index2++];
         }
+        
         return result;
     }
 }
