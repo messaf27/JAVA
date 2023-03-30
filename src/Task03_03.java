@@ -37,7 +37,8 @@ public class Task03_03 {
 
         System.out.printf("MAX = %d\n", maxNum);
         System.out.printf("MIN = %d\n", minNum);
-        System.out.printf("AVG = %d\n", arrList.get(avgNum));
+        System.out.printf("AVG for Index = %d\n", arrList.get(avgNum));
+        System.out.printf("AVG for Num = %d\n", (maxNum + minNum) / 2);
         System.out.println("==================================");
     }
 }
