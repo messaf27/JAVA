@@ -15,6 +15,7 @@ public class Task03_02 {
 
         System.out.println("========== Задача №03-02 =============");
 
+        // Наполняем коллекцию случайными числами от 0 до 100
         for (int i = 0; i < 20; i++) {
             arrList.add(random.nextInt(100));
         }
