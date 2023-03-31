@@ -18,7 +18,7 @@ public class Task04_00 {
         long startTime = 0;
         long stopTime = 0;
 
-        System.out.println("========== Задача №04-01 =============");
+        System.out.println("========== Задача №04-00 =============");
         
         startTime = System.currentTimeMillis();
 
