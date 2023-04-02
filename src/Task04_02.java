@@ -8,8 +8,6 @@
 
 import java.util.LinkedList;
 
-import javax.print.attribute.standard.Sides;
-
 public class Task04_02 {
 
     static LinkedList<Integer> queueList = new LinkedList<>();
@@ -29,7 +27,7 @@ public class Task04_02 {
         System.out.println(queueString());
         System.out.println(first());
         System.out.println(queueString());
-        
+
         System.out.println("==================================");
     }
 
