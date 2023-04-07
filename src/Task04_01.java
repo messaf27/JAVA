@@ -1,7 +1,6 @@
 /*
  * Пусть дан LinkedList с несколькими элементами. Реализуйте метод, который вернёет «перевёрнутый» список.
  */
-import java.util.Collections;
 import java.util.LinkedList;
 import java.util.Random;
 
