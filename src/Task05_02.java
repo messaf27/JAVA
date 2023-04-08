@@ -20,13 +20,10 @@
  * Иван Ежов
  * Написать программу, которая найдёт и выведет повторяющиеся имена с количеством повторений. Отсортировать по убыванию популярности.
  */
-import java.util.TreeMap;
 import java.util.Map.Entry;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
-
-
 
 public class Task05_02 {
 
@@ -52,7 +49,6 @@ public class Task05_02 {
     };
 
     public static void main(String[] args) {
-        // TreeMap<String, Integer> map = new TreeMap<>();
         HashMap<String, Integer> mapRaiting = new HashMap<>();
         Random random = new Random();
 
