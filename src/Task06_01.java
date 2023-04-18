@@ -176,9 +176,7 @@ public class Task06_01 {
                 }
                 break;
         }
-
         scan.close();
-
     }
 
 }
