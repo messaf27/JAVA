@@ -62,10 +62,6 @@ public class Task06_01 {
     public static void main(String[] args) {
         
         HashSet<NoteBook> nbShop = CreateDataBase(200);
-        // for (NoteBook noteBook : nbShop) {
-        //     System.out.println(noteBook);
-        // }
-
         PrintShop(nbShop);
     }
 
