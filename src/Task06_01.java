@@ -38,6 +38,9 @@ class NoteBook {
     }
 }
 
+/**
+ * Task06_01
+ */
 public class Task06_01 {
 
     public static String[] osNames = new String[] {
@@ -63,7 +66,7 @@ public class Task06_01 {
         //     System.out.println(noteBook);
         // }
 
-        PrintDb(nbShop);
+        PrintShop(nbShop);
     }
 
     public static HashSet<NoteBook> CreateDataBase(int num){
@@ -87,7 +90,7 @@ public class Task06_01 {
         return db;
     }  
 
-    public static void PrintDb(HashSet<NoteBook> set)
+    public static void PrintShop(HashSet<NoteBook> set)
     {      
         for (NoteBook noteBook : set) {
             System.out.println(noteBook);
